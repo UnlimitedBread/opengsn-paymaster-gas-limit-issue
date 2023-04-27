@@ -1,0 +1,14 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# environment
+.env
+
+# dependencies
+/node_modules/*
+
+# compiled output
+/artifacts/*
+/build/*
+
+# cache
+/cache/*
