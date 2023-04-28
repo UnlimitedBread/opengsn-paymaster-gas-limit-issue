@@ -14,6 +14,7 @@ export async function deployGaslessErc20Token(
 ): Promise<Contract> {
     const factory: ContractFactory = await ethersHh.getContractFactory("GaslessErc20Token", _deployer);
     const contract: Contract = await factory.deploy();
+    await contract.deployed();
     await contract.initialize(
         _admin,
         _minters,
@@ -23,5 +24,5 @@ export async function deployGaslessErc20Token(
         _decimals,
         _trustedForwarder
     );
-    return contract.deployed();
+    return contract;
 }
