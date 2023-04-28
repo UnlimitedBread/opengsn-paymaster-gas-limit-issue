@@ -23,10 +23,7 @@ describe("MyTest", function () {
     let env: TestEnvironment;
 
     let forwarderAddress: address;
-    let penalizerAddress: address;
     let relayHubAddress: address;
-    let stakeManagerAddress: address;
-    let versionRegistryAddress: address;
 
     let myRecipient: Contract;
 
@@ -56,10 +53,7 @@ describe("MyTest", function () {
         env = await GsnTestEnvironment.startGsn('localhost');
 
         forwarderAddress = env.contractsDeployment.forwarderAddress;
-        penalizerAddress = env.contractsDeployment.penalizerAddress;
         relayHubAddress = env.contractsDeployment.relayHubAddress;
-        stakeManagerAddress = env.contractsDeployment.stakeManagerAddress;
-        versionRegistryAddress = env.contractsDeployment.versionRegistryAddress;
 
         const web3provider = new Web3HttpProvider('http://127.0.0.1:8545');
 
