@@ -13,6 +13,7 @@ export async function deployMyPaymaster(
 ): Promise<Contract> {
     const factory: ContractFactory = await ethersHh.getContractFactory("MyPaymaster", _deployer);
     const contract: Contract = await factory.deploy();
+    await contract.deployed();
     await contract.initialize(
         _admin,
         _relayHub,
@@ -20,5 +21,5 @@ export async function deployMyPaymaster(
         _token,
         _limits
     );
-    return contract.deployed();
+    return contract;
 }
